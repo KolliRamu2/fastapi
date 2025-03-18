@@ -1,7 +1,7 @@
 # Fourth Version Dockerfile
 # build stage
 FROM python:3.12 AS builder
-ADD git clone https://github.com/KolliRamu2/fastapi.git
+RUN git clone https://github.com/KolliRamu2/fastapi.git
 WORKDIR /fastapi
 RUN pip3 install -no--cache-dir -r requirements.txt
 
