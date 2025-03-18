@@ -1,5 +1,5 @@
 # First Version Dockerfile
-FROM python:3.12
+FROM python:3.12-alpine
 LABEL author="Ramu Kolli" role="Student"
 COPY . /app
 WORKDIR /app
