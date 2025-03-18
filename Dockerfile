@@ -6,7 +6,7 @@ WORKDIR /fastapi
 RUN pip3 install -no--cache-dir -r requirements.txt
 
 # run stage
-FROM python:3.12-alpine as runner
+FROM python:3.12-alpine AS runner
 LABEL author="Ramu Kolli" role="Student"
 #RUN adduser -D fastapi
 #ENV HOME=/home/fastapi
