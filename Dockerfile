@@ -3,7 +3,7 @@
 FROM python:3.12 AS builder
 RUN git clone https://github.com/KolliRamu2/fastapi.git
 WORKDIR /fastapi
-RUN pip3 install -no--cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 # run stage
 FROM python:3.12-alpine AS runner
