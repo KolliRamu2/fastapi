@@ -13,8 +13,8 @@ LABEL author="Ramu Kolli" role="Student"
 #ENV PATH=$HOME/.local/bin:$PATH
 #RUN mkdir -p $HOME/.local && chown -R fastapi:fastapi $HOME/.local
 USER nobody
-COPY --chown=nobody --from=builder /usr/local/lib/python3.12/site-packages/ /usr/local/lib/python3.12/site-packages/
-COPY --chown=nobody --from=builder /usr/local/bin/uvicorn /usr/local/bin/uvicorn
+COPY --from=builder /usr/local/lib/python3.12/site-packages/ /usr/local/lib/python3.12/site-packages/
+COPY --from=builder /usr/local/bin/uvicorn /usr/local/bin/uvicorn
 COPY --chown=nobody --from=builder /fastapi /app
 WORKDIR /app
 EXPOSE 8000
