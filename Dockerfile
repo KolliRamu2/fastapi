@@ -3,6 +3,7 @@ FROM python:3.12-alpine
 LABEL author="Ramu Kolli" role="Student"
 RUN adduser -D fastapi
 ENV HOME=/home/fastapi
+ENV PATH=$HOME/.local/bin:$PATH
 RUN mkdir -p $HOME/.local & chown -R fastapi:fastapi $HOME/.local
 USER fastapi
 COPY --chown=fastapi . /app
