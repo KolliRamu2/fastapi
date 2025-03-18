@@ -18,6 +18,5 @@ COPY --chown=nobody --from=builder /usr/local/bin/uvicorn /usr/local/bin/uvicorn
 COPY --chown=nobody --from=builder /fastapi /app
 WORKDIR /app
 EXPOSE 8000
-RUN pip3 install --no-cache-dir -r requirements.txt
 CMD ["uvicorn","main:app","--host","0.0.0.0","--port","8000","--reload"]
 
