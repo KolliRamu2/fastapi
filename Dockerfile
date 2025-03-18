@@ -1,10 +1,11 @@
 # Third Version Dockerfile
 FROM python:3.12-alpine
 LABEL author="Ramu Kolli" role="Student"
-RUN adduser -D nobody
-ENV HOME=/home/nobody
-RUN mkdir -p $HOME/.local && chown -R nobody:nobody $HOME/.local
-COPY --chown=nobody . /app
+RUN adduser -D fastapi
+ENV HOME = home/fastapi
+RUN mkdir -p $HOME/.local & chown -R fastapi:fastapi $HOME/.local
+USER fastapi
+COPY --chown=fastapi . /app
 WORKDIR /app
 EXPOSE 8000
 RUN pip3 install -r requirements.txt
